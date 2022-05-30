@@ -7,10 +7,15 @@
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "format": "prettier --write 'src/**/*.{js,json,tsx,css,less,scss,ts,html,md}' && git update-index --again",
+        "lint:eslint": "eslint --cache --max-warnings 0 'src/**/*.{ts,tsx}'",
+        "lint:lint-staged": "lint:lint-staged && git update-index --again && lint-staged",
+        "lint:stylelint": "stylelint --cache --fix \"**/*.{less,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/"
     },
     "dependencies": {
         "next": "12.1.6",
+        "next-themes": "^0.2.0",
         "react": "18.1.0",
         "react-dom": "18.1.0"
     },
@@ -29,6 +34,12 @@
         "husky": "^8.0.0",
         "lint-staged": "^12.4.3",
         "prettier": "^2.6.2",
+        "stylelint": "^14.8.5",
+        "stylelint-config-prettier": "^9.0.3",
+        "stylelint-config-standard": "^25.0.0",
+        "stylelint-config-standard-scss": "^4.0.0",
+        "stylelint-order": "^5.0.0",
+        "stylelint-scss": "^4.2.0",
         "typescript": "4.7.2"
     },
     "lint-staged": {

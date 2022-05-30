@@ -2,3 +2,4 @@
 .next
 node_modules
 *.md
+stylelint.config.js
